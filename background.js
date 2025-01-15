@@ -9,10 +9,10 @@ function getDomain(url) {
 
 function updateIcon(tab, enabled) { 
   const iconPath = enabled ? "icons/enabled_icon.svg" : "icons/default_icon.svg";
-  browser.action.setIcon({ path: iconPath, tabId: tab.id }); 
+  browser.browserAction.setIcon({ path: iconPath, tabId: tab.id }); 
 }
 
-browser.action.onClicked.addListener((tab) => { 
+browser.browserAction.onClicked.addListener((tab) => { 
   const domain = getDomain(tab.url); 
   if (!domain) { 
     return; 
